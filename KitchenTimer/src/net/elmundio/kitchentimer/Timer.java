@@ -35,7 +35,8 @@ public class Timer implements Observer {
 	@Override
 	public void update(Observable obj, Object arg) {
 		  String resp = (String) arg;
-          System.out.println("\nReceived Response: " + resp );
+          this.tick();
+		  System.out.println(this.toString() );
 	}
 	
 

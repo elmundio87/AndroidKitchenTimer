@@ -15,6 +15,7 @@ public class DriverClass {
 		//testCreateTimeAndTickThreeTimes(0,1);
 		//testCreateTimeAndTickThreeTimes(0,100);
 		//testCreateTimeAndTickThreeTimes(0,59);
+		testCreateTimerAndAttachToTimeSource(0,28);
 		testCreateTimerAndAttachToTimeSource(0,59);
 	}
 	
