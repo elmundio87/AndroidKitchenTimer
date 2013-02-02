@@ -11,10 +11,15 @@ public class Time {
 		seconds = 0;
 	}
 	
-	public Time(int minutes, int seconds)
+	public Time(int minutes, int seconds) throws Exception
 	{
 		this.minutes = minutes;
 		this.seconds = seconds;
+		
+		if(this.seconds > 59)
+		{
+			throw new Exception("Too many seconds");
+		}
 	}
 	
 	public Time tick(){
