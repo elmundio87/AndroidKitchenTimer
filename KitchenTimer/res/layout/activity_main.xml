@@ -21,6 +21,7 @@
         android:layout_below="@+id/textView1"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="72dp"
-        android:text="Start" />
+        android:text="Start" 
+        android:onClick="startTimer"/>
 
 </RelativeLayout>
