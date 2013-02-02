@@ -48,7 +48,7 @@ public class Timer implements Observer {
 	
 	public String toString()
 	{
-		return new String(Integer.toString(id) + " - " + time.toString());
+		return new String(time.toString());
 	}
 
 	@Override
