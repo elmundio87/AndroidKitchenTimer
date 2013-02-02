@@ -11,12 +11,15 @@ public class DriverClass {
 		ts = new TimeSource();
 		 Thread thread = new Thread(ts);
 	     thread.start();
-		//testCreateTimeAndTickThreeTimes(1,1);
-		//testCreateTimeAndTickThreeTimes(0,1);
-		//testCreateTimeAndTickThreeTimes(0,100);
-		//testCreateTimeAndTickThreeTimes(0,59);
-		testCreateTimerAndAttachToTimeSource(0,28);
-		testCreateTimerAndAttachToTimeSource(0,59);
+		testCreateTimeAndTickThreeTimes(1,1);
+		testCreateTimeAndTickThreeTimes(0,1);
+		testCreateTimeAndTickThreeTimes(0,100);
+		testCreateTimeAndTickThreeTimes(0,59);
+		testCreateTimerAndAttachToTimeSource(0,8);
+		testCreateTimerAndAttachToTimeSource(5,01);
+		testCreateTimerAndAttachToTimeSource(10,59);
+		testCreateTimerAndAttachToTimeSource(100,59);
+		testCreateTimerAndAttachToTimeSource(101,59);
 	}
 	
 	public static void testCreateTimeAndTickThreeTimes(int minutes, int seconds)
@@ -39,7 +42,7 @@ public class DriverClass {
 	
 	public static void testCreateTimerAndAttachToTimeSource(int minutes, int seconds)
 	{
-		Timer t = new Timer(seconds);
+		Timer t = new Timer(minutes, seconds);
 		
 		ts.addObserver(t);
 

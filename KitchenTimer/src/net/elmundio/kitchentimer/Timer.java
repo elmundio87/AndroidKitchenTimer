@@ -8,10 +8,10 @@ public class Timer implements Observer {
 	private int id;
 	private Time time;
 	
-	public Timer (int seconds)
+	public Timer (int minutes, int seconds)
 	{
 		try {
-			time = new Time(0, seconds);
+			time = new Time(minutes, seconds);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -29,7 +29,7 @@ public class Timer implements Observer {
 	
 	public String toString()
 	{
-		return new String(Integer.toString(id) + time.toString());
+		return new String(Integer.toString(id) + " - " + time.toString());
 	}
 
 	@Override
