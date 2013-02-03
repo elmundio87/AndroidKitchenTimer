@@ -15,21 +15,31 @@
         android:textSize="50sp" />
 
     <Button
-        android:id="@+id/button1"
+        android:id="@+id/button3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/textView1"
-        android:layout_centerHorizontal="true"
-        android:onClick="startTimer"
-        android:text="Start" />
+        android:layout_alignLeft="@+id/button2"
+        android:layout_alignRight="@+id/button2"
+        android:layout_below="@+id/button2"
+        android:layout_marginTop="17dp"
+        android:text="List Timer Sets" />
 
     <Button
         android:id="@+id/button2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/button1"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="44dp"
-        android:text="Next" />
+        android:layout_centerVertical="true"
+        android:text="List Timers" />
+
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/button2"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="28dp"
+        android:onClick="startTimer"
+        android:text="Start" />
 
 </RelativeLayout>

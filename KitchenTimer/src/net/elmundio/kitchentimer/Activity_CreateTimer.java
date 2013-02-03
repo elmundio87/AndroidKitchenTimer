@@ -7,6 +7,7 @@ import android.view.Menu;
 import android.view.View;
 import android.view.ViewGroup.LayoutParams;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -28,12 +29,19 @@ public class Activity_CreateTimer extends Activity {
     }
     
     public void button1_click(View view){
-    	Button myButton = new Button(this);
-    	myButton.setText("Push Me");
-
+    	EditText timerName = new EditText(this);
+    	EditText timerMinutes = new EditText(this);
+    	timerName.setHint("Timer Name");
+    	timerMinutes.setHint("Minutes");
+    	
+    	
     	LinearLayout ll = (LinearLayout)findViewById(R.id.mainView);
     	LayoutParams lp = new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT);
-    	ll.addView(myButton, lp);
+    	LinearLayout ll2 = new LinearLayout(this);
+    	
+    	ll2.addView(timerName);
+    	ll2.addView(timerMinutes);
+    	ll.addView(ll2);
     }
     
 }
