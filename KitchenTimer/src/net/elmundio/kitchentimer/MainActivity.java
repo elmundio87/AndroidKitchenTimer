@@ -4,8 +4,11 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.app.Activity;
+import android.content.Intent;
 import android.view.Menu;
 import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.Button;
 import android.widget.TextView;
 
 public class MainActivity extends Activity {
@@ -24,6 +27,8 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        Button button = (Button) findViewById(R.id.button2);
+        button.setOnClickListener(onClickListener);
         ts = new TimeSource();
    	 	Thread thread = new Thread(ts);
    	 	thread.start();
@@ -45,6 +50,16 @@ public class MainActivity extends Activity {
     	ts.addObserver(t);
     }
     
+
+    OnClickListener onClickListener = new OnClickListener() {
+        @Override
+        public void onClick(View v) {
+        	Intent myintent = new Intent(MainActivity.this, Activity_CreateTimer.class);
+            startActivity(myintent);    
+        }
+    };
+
+ 
 
 
     
