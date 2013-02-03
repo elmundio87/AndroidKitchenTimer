@@ -9,15 +9,19 @@ public class DriverClass {
 		
 		System.out.println("TEST OUTPUT");
 		ts = TimeSource.getInstance();
+		ts = TimeSource.getInstance();
+		ts = TimeSource.getInstance();
 		
-	    
+		
 	    TimerCollection tc = new TimerCollection();
-	    Timer t1 = new Timer(10, 0);
-	    Timer t2 = new Timer(1,0);
+	    Timer t1 = new Timer(0, 5);
+	    Timer t2 = new Timer(0,10);
+	    Timer t3 = new Timer(0,10);
 	    tc.addTimer(t1);
 	    tc.addTimer(t2);
+	    tc.addTimer(t3);
 	    
-	    tc.startTimers();
+	    tc.startTimer();
 	    
 		//testCreateTimeAndTickThreeTimes(1,1);
 		//testCreateTimeAndTickThreeTimes(0,1);

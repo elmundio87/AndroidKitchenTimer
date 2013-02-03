@@ -7,12 +7,13 @@ import android.os.Handler;
 import android.os.Message;
 import android.widget.TextView;
 
-public class Timer implements Observer {
+public class Timer extends Observable implements Observer {
 	
 	private int id;
 	private Time time;
 	private TextView text;
 	private Handler mHandler; 
+	
 	
 	public Timer (int minutes, int seconds)
 	{
@@ -40,9 +41,14 @@ public class Timer implements Observer {
 		return id;
 	}
 	
-	private Time tick()
-	{
-		return time.tick();	
+	private Time tick(){
+		Time t = time.tick();
+		if(t.minutes == 0 && t.seconds == 0)
+		{
+			setChanged();
+			notifyObservers("finished");
+		}
+		return t;	
 	}
 	
 	public String toString()
@@ -65,10 +71,14 @@ public class Timer implements Observer {
 	public void update(Observable obj, Object arg) {
 		  String resp = (String) arg;
           this.tick();
-                    
-          Message msg = new Message();
-          msg.obj = this.toString();
-          mHandler.sendMessage(msg);
+                  
+          try {  
+        	  Message msg = new Message();
+              msg.obj = this.toString();
+              mHandler.sendMessage(msg);
+          } catch (NoClassDefFoundError e) {  
+              //If you're here, you're probably testing functionality without the UI
+          }  
           
 		  System.out.println(this.toString() );
 	}
