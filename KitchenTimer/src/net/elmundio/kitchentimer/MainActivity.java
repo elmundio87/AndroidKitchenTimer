@@ -29,7 +29,7 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
         Button button = (Button) findViewById(R.id.button2);
         button.setOnClickListener(onClickListener);
-        ts = new TimeSource();
+        ts = TimeSource.getInstance();
    	 	Thread thread = new Thread(ts);
    	 	thread.start();
    	 	

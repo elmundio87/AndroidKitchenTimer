@@ -5,7 +5,6 @@ import java.util.Observer;
 
 import android.os.Handler;
 import android.os.Message;
-import android.view.View;
 import android.widget.TextView;
 
 public class Timer implements Observer {
@@ -50,6 +49,17 @@ public class Timer implements Observer {
 	{
 		return new String(time.toString());
 	}
+	
+	public void start()
+	{
+		TimeSource.getInstance().addObserver(this);
+	}
+	
+	public void stop()
+	{
+		TimeSource.getInstance().deleteObserver(this);
+	}
+
 
 	@Override
 	public void update(Observable obj, Object arg) {

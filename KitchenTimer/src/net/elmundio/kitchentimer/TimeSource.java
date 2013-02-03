@@ -3,14 +3,21 @@ package net.elmundio.kitchentimer;
 import java.util.Observable;
 
 
-public class TimeSource extends Observable implements Runnable{
+public final class TimeSource extends Observable implements Runnable{
 	
 	
-	public TimeSource()
+	private TimeSource()
 	{
-		
+		Thread thread = new Thread(this);
+	    thread.start();
 	}
 
+	public static TimeSource getInstance(){
+		return fINSTANCE;
+	}
+	
+	private static final TimeSource fINSTANCE = new TimeSource();
+	
 	@Override
 	public void run() {
 		try {

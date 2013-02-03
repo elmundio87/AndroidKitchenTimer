@@ -20,4 +20,8 @@ public class TimerCollection {
 		}
 	}
 	
+	public void startTimers(){
+		timers.get(0).start();
+	}
+	
 }
