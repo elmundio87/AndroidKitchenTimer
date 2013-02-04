@@ -21,7 +21,14 @@ public class DriverClass {
 	    tc.addTimer(t2);
 	    tc.addTimer(t3);
 	    
+	    TimerCollection tc2 = new TimerCollection();
+	    Timer t4 = new Timer(0,10);
+	    Timer t5 = new Timer(0,10);
+	    tc2.addTimer(t4);
+	    tc2.addTimer(t5);
+	    
 	    tc.startTimer();
+	    tc2.startTimer();
 	    
 		//testCreateTimeAndTickThreeTimes(1,1);
 		//testCreateTimeAndTickThreeTimes(0,1);
