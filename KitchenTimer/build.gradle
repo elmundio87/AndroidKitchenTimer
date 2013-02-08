@@ -29,8 +29,22 @@ sourceSets {
 
 dependencies { 
     testCompile 'junit:junit:4.8.2'
-    compile files('/Users/edmundd/Development/adt-bundle-mac-x86_64/sdk/platforms/android-17/android.jar')
+    compile files(System.getenv()['ANDROID_SDK_HOME'] + '/platforms/android-17/android.jar')
+    print System.getenv()["ANDROID_SDK_HOME"] + '/platforms/android-17/android.jar'
     compile files('libs/android-support-v4.jar')
     
 }
 
+compileJava {
+	doFirst {
+		sdkDir = new File(System.getenv()['ANDROID_SDK_HOME'])
+		
+		if(System.getenv()['ANDROID_SDK_HOME'] == ""){
+	   		throw new GradleException('ANDROID_SDK_HOME has not been set. Example: /Development/adt-bundle-mac-x86_64/sdk')
+		}
+		
+		if(!sdkDir.isDirectory()){
+			throw new GradleException('ANDROID_SDK_HOME is pointing to a non-existant directory (' + System.getenv()['ANDROID_SDK_HOME'] + ')' )
+		}
+	}  
+}
