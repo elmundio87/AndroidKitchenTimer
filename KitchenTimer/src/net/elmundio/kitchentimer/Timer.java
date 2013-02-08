@@ -14,6 +14,18 @@ public class Timer extends Observable implements Observer {
 	private TextView text;
 	private Handler mHandler; 
 	
+
+	public Timer (int seconds)
+	{
+		int remainder = seconds % 60;
+		int minutes = (seconds - remainder) / 60;
+		try {
+			time = new Time(minutes, remainder);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
 	
 	public Timer (int minutes, int seconds)
 	{
@@ -76,10 +88,12 @@ public class Timer extends Observable implements Observer {
         	  Message msg = new Message();
               msg.obj = this.toString();
               mHandler.sendMessage(msg);
-   
-
-          
+     
 		  System.out.println(this.toString() );
+	}
+	
+	public int getTimeInSeconds(){
+		return (time.minutes * 60) + time.seconds;
 	}
 	
 
