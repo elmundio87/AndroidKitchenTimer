@@ -72,13 +72,12 @@ public class Timer extends Observable implements Observer {
 		  String resp = (String) arg;
           this.tick();
                   
-          try {  
+        
         	  Message msg = new Message();
               msg.obj = this.toString();
               mHandler.sendMessage(msg);
-          } catch (NoClassDefFoundError e) {  
-              //If you're here, you're probably testing functionality without the UI
-          }  
+   
+
           
 		  System.out.println(this.toString() );
 	}
