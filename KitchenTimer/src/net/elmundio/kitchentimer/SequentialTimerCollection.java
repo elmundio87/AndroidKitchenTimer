@@ -58,9 +58,18 @@ public class SequentialTimerCollection implements Observer{
 		}
 	}
 	
+	public int getTotalTimeInSeconds(){
+		int seconds = 0;
+		for(Timer t: timers){
+			seconds += t.getTimeInSeconds();
+		}
+		return seconds;
+	}
+	
 	private void alarm()
 	{
 		System.out.println("TIMER HAS FINISHED RING RING RING");
 	}
+	
 	
 }
