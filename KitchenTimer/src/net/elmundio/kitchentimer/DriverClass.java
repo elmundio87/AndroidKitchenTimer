@@ -13,7 +13,7 @@ public class DriverClass {
 		ts = TimeSource.getInstance();
 		
 		
-	    TimerCollection tc = new TimerCollection();
+	    SequentialTimerCollection tc = new SequentialTimerCollection();
 	    Timer t1 = new Timer(0, 5);
 	    Timer t2 = new Timer(0,10);
 	    Timer t3 = new Timer(0,10);
@@ -21,7 +21,7 @@ public class DriverClass {
 	    tc.addTimer(t2);
 	    tc.addTimer(t3);
 	    
-	    TimerCollection tc2 = new TimerCollection();
+	    SequentialTimerCollection tc2 = new SequentialTimerCollection();
 	    Timer t4 = new Timer(0,10);
 	    Timer t5 = new Timer(0,10);
 	    tc2.addTimer(t4);
@@ -29,16 +29,7 @@ public class DriverClass {
 	    
 	    tc.startTimer();
 	    tc2.startTimer();
-	    
-		//testCreateTimeAndTickThreeTimes(1,1);
-		//testCreateTimeAndTickThreeTimes(0,1);
-		//testCreateTimeAndTickThreeTimes(0,100);
-		//testCreateTimeAndTickThreeTimes(0,59);
-		//testCreateTimerAndAttachToTimeSource(0,8);
-		//testCreateTimerAndAttachToTimeSource(5,01);
-		//testCreateTimerAndAttachToTimeSource(10,59);
-		//testCreateTimerAndAttachToTimeSource(100,59);
-		//testCreateTimerAndAttachToTimeSource(101,59);
+
 	}
 	
 	public static void testCreateTimeAndTickThreeTimes(int minutes, int seconds)
