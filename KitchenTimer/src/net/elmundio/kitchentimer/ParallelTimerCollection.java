@@ -45,10 +45,14 @@ public class ParallelTimerCollection {
 	}
 	
 	public void startAllTimers(){
-		
+		for(SequentialTimerCollection t: timerCollections){
+			t.startTimer();
+		}
 	}
 	
 	public void stopAllTimers(){
-		
+		for(SequentialTimerCollection t: timerCollections){
+			t.stopAllTimers();
+		}
 	}
 }

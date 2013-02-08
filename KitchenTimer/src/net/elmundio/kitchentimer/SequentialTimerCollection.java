@@ -29,7 +29,7 @@ public class SequentialTimerCollection implements Observer{
 	}
 	
 	
-	private void stopAllTimers()
+	public void stopAllTimers()
 	{
 		for(Timer t: timers)
 		{
