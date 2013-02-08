@@ -38,3 +38,23 @@ KitchenTimer/bin/KitchenTimer.apk
 .DS_Store
 
 KitchenTimer/.classpath
+
+KitchenTimer/.gradle/1.2/taskArtifacts/fileSnapshots.bin
+
+KitchenTimer/build/test-results/TEST-TimerTest.xml
+
+KitchenTimer/build/reports/tests/index.html
+
+KitchenTimer/build/reports/tests/default-package.html
+
+KitchenTimer/build/reports/tests/TimerTest.html
+
+KitchenTimer/bin/classes/net/elmundio/kitchentimer/Timer.class
+
+*.bin
+
+*.bin
+
+KitchenTimer/.gradle/1.2/taskArtifacts/fileHashes.bin
+
+KitchenTimer/.gradle/1.2/taskArtifacts/taskArtifacts.bin

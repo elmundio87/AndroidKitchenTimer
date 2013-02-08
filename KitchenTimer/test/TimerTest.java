@@ -20,4 +20,20 @@ public class TimerTest {
 		assertEquals(t.toString(), "4:59");
 	}
 	
+
+	@Test
+	public void testGetTimeInSeconds() {
+		Timer t = new Timer(5,0);
+		assertEquals(t.getTimeInSeconds(), 300);
+	}
+	
+	@Test
+	public void testCreateTimerWithJustSeconds() {
+		Timer t = new Timer(300);
+		assertEquals(t.getTimeInSeconds(), 300);
+	}
+	
+	
+	
+	
 }
