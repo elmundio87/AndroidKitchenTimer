@@ -41,7 +41,7 @@ public class Timer extends Observable implements Observer {
 		return id;
 	}
 	
-	private Time tick(){
+	public Time tick(){
 		Time t = time.tick();
 		if(t.minutes == 0 && t.seconds == 0)
 		{
