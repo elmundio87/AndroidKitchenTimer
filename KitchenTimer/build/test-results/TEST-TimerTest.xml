@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite errors="0" failures="0" hostname="ed-mac.local" name="TimerTest" tests="1" time="0.06" timestamp="2013-02-08T18:50:35">
+  <properties />
+  <testcase classname="TimerTest" name="testTimerConstructor" time="0.0030" />
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

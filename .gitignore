@@ -34,3 +34,7 @@ KitchenTimer/bin/KitchenTimer.apk
 *.class
 
 *.class
+
+.DS_Store
+
+KitchenTimer/.classpath
