@@ -1,3 +1,36 @@
-task wrapper(type: Wrapper) {
-    gradleVersion = '1.4'
+
+
+apply plugin: 'eclipse'
+apply plugin: 'java'
+
+repositories {
+    mavenCentral()
 }
+
+sourceSets {
+    main {
+        java {
+            srcDir 'src'
+            exclude '**/*Activity*'
+        }
+        resources {
+            srcDir 'src/resources'
+        }      
+    }
+     test {
+        java {
+            srcDir 'test'
+        }
+        resources {
+            srcDir 'src/resources'
+        }      
+    }
+}
+
+dependencies { 
+    testCompile 'junit:junit:4.8.2'
+    compile files('/Users/edmundd/Development/adt-bundle-mac-x86_64/sdk/platforms/android-17/android.jar')
+    compile files('libs/android-support-v4.jar')
+    
+}
+
