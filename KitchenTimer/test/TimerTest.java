@@ -13,4 +13,11 @@ public class TimerTest {
 		assertEquals(t.toString(), "5:00");
 	}
 
+	@Test
+	public void testTimerTick() {
+		Timer t = new Timer(5,0);
+		t.tick();
+		assertEquals(t.toString(), "4:59");
+	}
+	
 }
