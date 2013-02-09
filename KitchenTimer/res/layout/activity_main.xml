@@ -46,14 +46,14 @@
     </LinearLayout>
 
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true" >
 
         <EditText
             android:id="@+id/edt_label"
-            android:layout_width="158dp"
+            android:layout_width="160dp"
             android:layout_height="wrap_content"
             android:ems="10"
             android:hint="Name (Optional)" />
@@ -69,11 +69,11 @@
 
         <Button
             android:id="@+id/btn_addTimer"
-            android:layout_width="wrap_content"
+            android:layout_width="50dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
             android:onClick="addTimer"
-            android:text="Add" />
+            android:text="+" />
+
     </LinearLayout>
 
 </LinearLayout>
