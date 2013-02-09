@@ -58,3 +58,7 @@ KitchenTimer/bin/classes/net/elmundio/kitchentimer/Timer.class
 KitchenTimer/.gradle/1.2/taskArtifacts/fileHashes.bin
 
 KitchenTimer/.gradle/1.2/taskArtifacts/taskArtifacts.bin
+
+*.class
+
+KitchenTimer/bin/AndroidManifest.xml
