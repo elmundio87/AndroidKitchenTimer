@@ -11,6 +11,6 @@ public class ScheduledTimer extends Timer {
 
 	public String toString()
 	{
-		return new String("Scheduled" + this.getTime().toString());
+		return new String(this.getLabel() + ": " + "Scheduled to start in " + this.getTime().toString());
 	}
 }

@@ -12,7 +12,7 @@ public class Timer extends Observable implements Observer {
 	private int id;
 	private Time time;
 	private Handler mHandler; 
-	
+	private String label;
 
 	public Timer (int seconds)
 	{
@@ -76,7 +76,7 @@ public class Timer extends Observable implements Observer {
 	
 	public String toString()
 	{
-		return new String(this.getTime().toString());
+		return new String(this.getLabel() + ": " + this.getTime().toString());
 	}
 	
 	public void start()
@@ -109,6 +109,16 @@ public class Timer extends Observable implements Observer {
 	public Time getTime()
 	{
 		return time;
+	}
+	
+	public void setLabel(String label)
+	{
+		this.label = label;
+	}
+	
+	public String getLabel()
+	{
+		return label;
 	}
 	
 
