@@ -4,14 +4,31 @@ import java.util.ArrayList;
 import java.util.Observable;
 import java.util.Observer;
 
+import android.os.Handler;
+
 public class SequentialTimerCollection implements Observer{
 
 	ArrayList<Timer> timers = new ArrayList<Timer>();
+	public Handler mHandler; 
+	
 	int timerIndex = 0;
 	
-	public void addTimer(Timer timer){
-		timers.add(timer);
+	public SequentialTimerCollection()
+	{
 		
+	}
+	
+	public SequentialTimerCollection(Handler mHandler)
+	{
+		this.mHandler = mHandler;
+	}
+	
+	public void addTimer(Timer timer){
+		timers.add(timer);	
+	}
+	
+	public void addTimerFirst(Timer timer){
+		timers.add(0,timer);
 	}
 	
 	public void removeTimer(int id){

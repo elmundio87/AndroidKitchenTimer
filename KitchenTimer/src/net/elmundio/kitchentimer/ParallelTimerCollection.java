@@ -37,7 +37,7 @@ public class ParallelTimerCollection {
 		{
 			if(t.getTotalTimeInSeconds() < t_max.getTotalTimeInSeconds())
 			{
-				t.addTimer(new Timer(t_max.getTotalTimeInSeconds() - t.getTotalTimeInSeconds()));
+				t.addTimerFirst(new Timer(t_max.getTotalTimeInSeconds() - t.getTotalTimeInSeconds(),t.mHandler));
 			}
 		}
 		
