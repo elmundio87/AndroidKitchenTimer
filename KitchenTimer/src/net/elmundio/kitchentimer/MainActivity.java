@@ -44,11 +44,18 @@ public class MainActivity extends Activity {
     	ptc.startAllTimers();
     }
     
+    public void pauseTimer(View view){
+    	ptc.stopAllTimers();
+    }
+    
     public void addTimer(View view){
     	String message = "Initialising";
+    	String label;
     	LinearLayout l = (LinearLayout) findViewById(R.id.layout_timers);
        	EditText edt_minutes = (EditText) findViewById(R.id.edt_minutes);
-        final TextView timerName = new TextView(this);
+       	EditText edt_label = (EditText) findViewById(R.id.edt_label);
+        label = edt_label.getText().toString();
+       	final TextView timerName = new TextView(this);
         
     	
     	Handler mHandler = new Handler() {
@@ -60,16 +67,18 @@ public class MainActivity extends Activity {
             }
         };
         
-        timerName.setText(edt_minutes.getText() + ":00");
+        timerName.setText(edt_label.getText() + ": " + edt_minutes.getText() + ":00");
         SequentialTimerCollection stc = new SequentialTimerCollection(mHandler);
         int min = Integer.parseInt(edt_minutes.getText().toString().trim());
         Timer t = new Timer(min, 0, mHandler);
+        stc.setLabel(label);
         stc.addTimer(t);
         ptc.AddTimerCollection(stc);
     	LayoutParams lp = new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT);
     	l.addView(timerName);
         
-        
+    	edt_label.setText("");
+        edt_minutes.setText("");
        
     }
     
