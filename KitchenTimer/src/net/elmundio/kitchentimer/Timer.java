@@ -65,7 +65,7 @@ public class Timer extends Observable implements Observer {
 	}
 	
 	public Time tick(){
-		Time t = time.tick();
+		Time t = this.getTime().tick();
 		if(t.minutes == 0 && t.seconds == 0)
 		{
 			setChanged();
@@ -76,7 +76,7 @@ public class Timer extends Observable implements Observer {
 	
 	public String toString()
 	{
-		return new String(time.toString());
+		return new String(this.getTime().toString());
 	}
 	
 	public void start()
@@ -103,7 +103,12 @@ public class Timer extends Observable implements Observer {
 	}
 	
 	public int getTimeInSeconds(){
-		return (time.minutes * 60) + time.seconds;
+		return (this.getTime().minutes * 60) + this.getTime().seconds;
+	}
+	
+	public Time getTime()
+	{
+		return time;
 	}
 	
 
